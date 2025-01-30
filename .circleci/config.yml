@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:17
+    steps:
+      - checkout
+      - run:
+          name: Compile Java Program
+          command: javac src/HelloWorld.java
+      - run:
+          name: Run Java Program
+          command: java -cp src HelloWorld
